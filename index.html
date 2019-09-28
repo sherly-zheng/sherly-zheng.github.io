@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sherly Zheng</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style/default.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="nav row">
+			<span class="nav__left col-7">
+				<a class="nav__link" href="#">Sherly Zheng</a>
+			</span>
+			<span class="nav__right col-5">
+				<a class="nav__link" href="#about">About</a>
+				<a class="nav__link" href="#projects">Projects</a>
+				<a class="nav__link" href="#resume">Resume</a>
+			</span>
+		</div>
+		<div class="body">
+			<div class="body__section about" id="about">
+				<div class="about__container row">
+					<h1 class="about__heading col-5">Hi, I'm Sherly. </br>I'm a full-stack engineer</br> and recent graduate.</h1>
+					<div class="about__text col-7">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan dignissim condimentum. Integer augue magna, malesuada sit amet lacus eu, tempus iaculis lacus. Integer vitae erat ipsum. Cras bibendum sapien id sem congue mattis. Quisque non felis eget mi feugiat elementum sit amet a nunc.
+					</div>
+				</div>
+				<div class="about__footer row">
+					<button class="about__btn" type="button">Connect with me!</button>
+				</div>
+			</div>
+
+			<div class="body__section projects" id="projects">
+				<div class="projects__project project">
+					<div class="project__container">
+						<img class="project__icon" src="img/penguin_image.png" alt="Penguin Game">
+						<div class="project__text">
+							<h2 class="project__title">Penguin Game</h2>
+							<p class="project__descript">
+								A game application where the player controls a penguin riding a snow tube, avoiding obstacles as it accelerates. Developed using the OpenGL Utility Toolkit (GLUT).
+							</p>
+							<span class="project__language">Language: C++</span>
+						</div>
+						<a class="project__btn" href="https://github.com/szheng104/penguin-game">Learn more</a>
+					</div>
+				</div>
+				<div class="projects__project project">
+					<div class="project__container">
+						<img class="project__icon" src="img/menumap_image.png" alt="MenuMap">
+						<h2 class="project__title">MenuMap</h2>
+						<div class="project__text">
+							<p class="project__descript">
+								A webpage which allows users to view menus for restaurants in a fictional New Pork City. Users can also submit a restaurant's menus, which are stored in a MySQL database.
+							</p>
+							<span class="project__language">Languages: HTML, CSS, Javascript, jQuery, PHP</span>
+							<a class="project__btn" href="https://github.com/szheng104/MenuMap">Learn more</a>
+						</div>
+					</div>
+				</div>
+				<div class="projects__project project">
+					<div class="project__container">
+						<img class="project__icon" src="img/github_image.png" alt="Github">
+						<div class="project__text">
+							<h2 class="project__title">Other Projects</h2>
+							<p class="project__descript">
+								Visit my GitHub to view more projects and algorithms I've worked on!
+							</p>
+						</div>	
+						<a class="project__btn" href="https://github.com/szheng104">More on GitHub</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="body__section resume" id="resume">
+				<div class="resume__section row">
+					<h2 class="resume__heading col-3">experience.</h2>
+					<ul class="resume__list col-9">
+						<li class="resume__item item">
+							<h3 class="item__title title">
+								<span class="title__part title__part--bold">Medical Records Assistant</span>
+								<span class="title__divider"> | </span>
+								<span class="title__part title__part--light">Island Ambulatory Surgery Center</span>
+								<span class="title__divider"> | </span>
+								<span class="title__part title__part--light title__part--italic">January 2017 - July 2019</span>
+							</h3>
+							<span class="item__text">
+								Managed and processed requests for patient medical records. Transitioned all physical medical records into digital records. Created a database to maintain information about requests and to store digital records, which aided employees in responding to inquiries about requests, as well as expedited the process of retrieving records. Designed a user-friendly interface for employees to easily enter data into and retrieve data from the database.
+							</span>
+						</li>
+					</ul>
+				</div>
+				<div class="resume__section row">
+					<h2 class="resume__heading col-3">skills.</h2>
+					<ul class="resume__list col-9">
+						<li class="resume__item item">
+							<h3 class="item__title">Programming Languages</h3>
+							<span class="item__text">C++, Java, CSS, HTML, JavaScript, jQuery, PHP, SQL</span>
+							<h3 class="item__title">Verbal Languages</h3>
+							<span class="item__text">English, Cantonese, Spanish, Korean</span>
+						</li>
+					</ul>
+				</div>
+				<div class="resume__footer row">
+					<a class="resume__btn" target="_blank" href="docs/SherlyZhengResume.pdf">Download Resume</a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="scripts/jquery.scroll.js"></script>
+</html>
