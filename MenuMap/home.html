@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MenuMap</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="stylesheets/default.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Slab" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="topnav row">
+			<a class="topnav__link col-12" href="home.html">MenuMap</a>
+		</div>
+		<div class="body body--centered row">
+			<form class="searchbar col-12" action="list.php" name="search" method="GET">
+				<h2 class="searchbar__heading searchbar__heading--block">View restaurants near: </h2>
+				<span class="searchbar__container searchbar__container--lg">(
+					<input class="searchbar__coord searchbar__coord--lg" type="number" name="searchX" placeholder="X" min=0 max=100 required>,
+					<input class="searchbar__coord searchbar__coord--lg" type="number" name="searchY" placeholder="Y" min=0 max=100 required>
+					)
+				</span>
+				<button class="searchbar__submit searchbar__coord--lg"type="submit" > 
+					<i class="fas fa-search"></i>
+				</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>New Restaurant | MenuMap</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="stylesheets/default.css">
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Raleway|Roboto+Slab&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>	
+		<div class="topnav">
+			<a class="topnav__link" href="home.html">MenuMap</a>
+		</div>
+		<div class="body">
+			<h2 class="title">Let's put your restaurant on the <span class="attn bold">map</span>.</h2>
+			
+			<div class="step" id="step-1">
+				<div class="step__header">
+					<h4 class="step__heading">Step 1 of 3: Restaurant Information</h4>
+					<p class="step__instructions"><span class="asterisk">*</span> = required field.</p>
+					<div class="step__errors errors">
+						<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+						<ul class="errors__list error">	
+							<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+							<li class="error__addr-bounds">Address coordinates must be between 0 and 100 (inclusive).</li>
+							<li class="error__addr-taken">The address provided is already occupied by a different business. Please enter a different address.</li>
+							<li class="error__phone">Phone number must be in the format xxx-xxx-xxxx.</li>
+							<li class="error__time">Opening time cannot be the same as closing time.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="step__body">
+					<ol class="questions">
+						<li class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Restaurant Name<span class="asterisk">*</span>:</span>
+							<span class="question__answer">
+								<input class="text-input text-input--width--250px" type="text" name="restname"  maxlength="50" autocomplete="off" required>
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Restaurant Address<span class="asterisk">*</span>:</span>
+							<span class="question__answer address-input">
+								(<input class="address-input__value" type="number" name="addressx" min="0" max="100" autocomplete="off" placeholder="X" required>,
+								<input class="address-input__value" type="number" name="addressy" min="0" max="100" autocomplete="off" placeholder="Y" required>)
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Restaurant Phone Number:</span>
+							<span class="question__answer">
+								<input class="phone-input" type="text" name="phone" maxlength="12" autocomplete="off" placeholder="xxx-xxx-xxxx">
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Business Hours<span class="asterisk">*</span>:</span>
+							<span class="question__answer">
+								<table class="schedule-input">
+									<tr class="schedule-input__headers">
+										<th class="schedule-input__header">Days</th>
+										<th class="schedule-input__header center">Opening Times</th>
+										<th class="schedule-input__header center">Closing Times</th>
+										<th class="schedule-input__header center">Open 24 Hours</th>
+										<th class="schedule-input__header center">Closed</th>
+									</tr>
+								</table>
+							</span>
+						</li>
+					</ol>
+				</div>
+				<div class="step__footer">
+					<button class="step__prev-btn step__prev-btn--disabled" type="button" disabled="true">Prev</button>
+					<button class="step__next-btn" type="button">Next</button>
+				</div>
+			</div>
+
+			<div class="step" id="step-2">
+				<div class="step__header">
+					<h4 class="step__heading">Step 2 of 3: Additional Information</h4>
+					<p class="step__instructions"><span class="asterisk">*</span> = required field.</p>
+					<div class="step__errors errors">
+						<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+						<ul class="errors__list error">	
+							<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="step__body">
+					<ol class="questions">
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Does your restaurant offer delivery?<span class="asterisk">*</span></span>
+							<span class="question__answer radio-input">
+								<input class="radio-input__value" id="deliver-yes" value="1" type="radio" name="deliver" required>
+								<label class="radio-input__label" for="deliver-yes">Yes</label>
+								<input class="radio-input__value" id="deliver-no" value="0" type="radio" name="deliver" required>
+								<label class="radio-input__label" for="deliver-no">No</label>
+								<input class="radio-input__value" id="deliver-na" value="null" type="radio" name="deliver" required checked>
+								<label class="radio-input__label" for="deliver-na">I'd prefer to not answer</label>
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Does your restaurant offer take out?<span class="asterisk">*</span></span>
+							<span class="question__answer radio-input">
+								<input class="radio-input__value" id="takeout-yes" value="1" type="radio" name="takeout" required>
+								<label class="radio-input__label" for="takeout-yes">Yes</label>
+								<input class="radio-input__value" id="takeout-no" value="0" type="radio" name="takeout" required>
+								<label class="radio-input__label" for="takeout-no">No</label>
+								<input class="radio-input__value" id="takeout-na" value="null" type="radio" name="takeout" required checked>
+								<label class="radio-input__label" for="takeout-na">I'd prefer to not answer</label>
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Does your restaurant accept reservations?<span class="asterisk">*</span></span>
+							<span class="question__answer radio-input">
+								<input class="radio-input__value" id="reservations-yes" value="1"  type="radio" name="reservations" required>
+								<label class="radio-input__label" for="reservations-yes">Yes</label>
+								<input class="radio-input__value" id="reservations-no" value="0" type="radio" name="reservations" required>
+								<label class="radio-input__label" for="reservations-no">No</label>
+								<input class="radio-input__value" id="reservations-na" value="null" type="radio" name="reservations" required checked>
+								<label class="radio-input__label" for="reservations-na">I'd prefer to not answer</label>
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Does your restaurant accept credit cards?<span class="asterisk">*</span></span>
+							<span class="question__answer radio-input">
+								<input class="radio-input__value" id="cards-yes" value="1" type="radio" name="cards" required>
+								<label class="radio-input__label" for="cards-yes">Yes</label>
+								<input class="radio-input__value" id="cards-no" value="0" type="radio" name="cards" required>
+								<label class="radio-input__label" for="cards-no">No</label>
+								<input class="radio-input__value" id="cards-na" value="null" type="radio" name="cards" required checked>
+								<label class="radio-input__label" for="cards-na">I'd prefer to not answer</label>
+							</span>
+						</li>
+						<li class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Please provide a brief description of your restaurant.</span>
+							<span class="question__answer">
+								<textarea class="textarea-input" maxlength="250" rows="4" name="restdescript" placeholder="Maximum of 250 characters."></textarea>
+							</span>
+						</li>
+					</ol>
+				</div>
+				<div class="step__footer">
+					<button class="step__prev-btn" type="button">Prev</button>
+					<button class="step__next-btn" type="button">Next</button>
+				</div>
+			</div>
+
+			<div class="step" id="step-3">
+				<div class="step__header">
+					<h4 class="step__heading">Step 3 of 3: Menus</h4>
+					<p class="step__instructions">Select an available menu to edit below, or click <span class="add-icon"><i class="fas fa-plus"></i></span> to add a new menu.</p>
+					<div class="step__errors errors">
+						<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+						<ul class="errors__list error">	
+							<li class="error__required">At least one menu is required.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="step__body">
+					<div class="menunav">
+						<label class="menunav__label" for="menunav__options">Menus Available:</label>
+						<span class="menunav__options">
+						</span>
+						<button class="menunav__add-menu-btn" type="button">
+							<i class="fas fa-plus"></i>
+						</button>
+					</div>
+
+					<div class="viewmenu row">
+						<ol class="viewmenu__list list menus col-5">
+						</ol>
+						<div class="viewmenu__preview col-7">
+							<div class="preview">
+								<div class="preview__header"></div>
+								<div class="preview__body"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="step__footer">
+					<button class="step__prev-btn" type="button">Prev</button>
+					<button class="step__next-btn" type="button">Done</button>
+				</div>
+			</div>
+			
+			<div class="menu-modal modal">
+				<form class="modal__form modal__form--lg">
+					<div class="modal__header">
+						<h4 class="modal__title"></h4>
+						<p class="modal__instructions"></p>
+						<div class="modal__errors errors">
+							<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+							<ul class="errors__list error">	
+								<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+								<li class="error__exists">The menu name entered already exists. Please enter different menu name.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal__body">
+						<div class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Menu Name<span class="asterisk">*</span>:</span>
+							<span class="question__answer">
+								<input class="text-input text-input--width--250px" type="text" name="menunameinput"  maxlength="50" autocomplete="off" required>
+							</span>
+						</div>
+						<div class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Menu Description:</span>
+							<span class="question__answer">
+								<textarea class="textarea-input" maxlength="140" rows="4" name="menudescriptinput" placeholder="Maximum of 140 characters."></textarea>
+							</span>
+						</div>
+					</div>
+					<div class="modal__footer">
+						<button class="modal__save-btn" type="button">Save</button>
+						<button class="modal__cancel-btn" type="button">Cancel</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="group-modal modal">
+				<form class="modal__form modal__form--lg">
+					<div class="modal__header">
+						<h4 class="modal__title"></h4>
+						<p class="modal__instructions"></p>
+						<div class="modal__errors errors">
+							<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+							<ul class="errors__list error">	
+								<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+								<li class="error__exists">The group name entered already exists in this menu. Please enter different group name.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal__body">
+						<div class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Group Name<span class="asterisk">*</span>:</span>
+							<span class="question__answer">
+								<input class="text-input text-input--width--250px" type="text" name="groupnameinput"  maxlength="50" autocomplete="off" required>
+							</span>
+						</div>
+						<div class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Group Description:</span>
+							<span class="question__answer">
+								<textarea class="textarea-input" maxlength="140" rows="4" name="groupdescriptinput" placeholder="Maximum of 140 characters."></textarea>
+							</span>
+						</div>
+					</div>
+					<div class="modal__footer">
+						<button class="modal__save-btn" type="button">Save</button>
+						<button class="modal__cancel-btn" type="button">Cancel</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="item-modal modal">
+				<form class="modal__form modal__form--lg">
+					<div class="modal__header">
+						<h4 class="modal__title"></h4>
+						<p class="modal__instructions"></p>
+						<div class="modal__errors errors">
+							<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+							<ul class="errors__list error">	
+								<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+								<li class="error__exists">The item name entered already exists in this group. Please enter different item name.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal__body">
+						<div class="question question--padding--10px--0px">
+							<span class="question__text inline question__text--m bold">Item Name<span class="asterisk">*</span>:</span>
+							<span class="question__answer">
+								<input class="text-input text-input--width--250px" type="text" name="itemnameinput"  maxlength="50" autocomplete="off" required>
+							</span>
+						</div>
+						<div class="question question--padding--10px--0px">
+							<span class="question__text block question__text--m bold">Item Description:</span>
+							<span class="question__answer">
+								<textarea class="textarea-input" maxlength="140" rows="4" name="itemdescriptinput" placeholder="Maximum of 140 characters."></textarea>
+							</span>
+						</div>
+					</div>
+					<div class="modal__footer">
+						<button class="modal__save-btn" type="button">Save</button>
+						<button class="modal__cancel-btn" type="button">Cancel</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="price-modal modal">
+				<form class="modal__form modal__form--lg">
+					<div class="modal__header">
+						<h4 class="modal__title"></h4>
+						<p class="modal__instructions"></p>
+						<div class="modal__errors errors">
+							<span class="errors__title">Your request could not be completed due to the following reason(s):</span>
+							<ul class="errors__list error">	
+								<li class="error__required">One or more required fields were not completed. Please complete all required (<span class="asterisk">*</span>) fields.</li>
+								<li class="error__format">Price must be between $0.00 and $9999.99, with or without two digits after the decimal point.</li>
+								<li class="error__exists">The size you have entered already exists for this item. Please enter a different size.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modal__body">
+						<div class="question question--padding--10px--0px center">
+							<span class="question__text block question__text--m bold">Is this item's price dependent on the market?<span class="asterisk">*</span></span>
+							<span class="
+								question__text block italic question__text--s">By selecting "yes", the price for this item will be set to "M.P.".
+							</span>
+							<span class="question__answer radio-input">
+								<input class="radio-input__value" id="mp-yes" value="1" type="radio" name="mpinput">
+								<label class="radio-input__label" for="mp-yes">Yes</label>
+								<input class="radio-input__value" id="mp-no" value="0" type="radio" name="mpinput" checked>
+								<label class="radio-input__label" for="mp-no">No</label>
+							</span>
+						</div>
+
+						<div class="container center">
+							<div class="question inline-block question--padding--10px--35px">
+								<span class="question__text inline question__text--m bold">Item Price<span class="asterisk">*</span>:</span>
+								<span class="question__answer">
+									<span class="price-input">$
+										<input class="price-input__value" type="number" name="priceinput" step="0.01" autocomplete="off" min="0" max="9999.99" value="" required>
+									</span>
+								</span>
+							</div>
+
+							<div class="question inline-block question--padding--10px--35px">
+								<span class="question__text inline question__text--m bold">Item Size:</span>
+								<span class="question__answer">
+									<input class="text-input text-input--width--100px" type="text" name="sizeinput"  maxlength="45" autocomplete="off" value="">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="modal__footer">
+						<button class="modal__save-btn" type="button">Save</button>
+						<button class="modal__cancel-btn" type="button">Cancel</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="del-modal modal">
+				<form class="modal__form modal__form--sm">
+					<div class="modal__header">
+						<h4 class="modal__title">Delete</h4>
+						<p class="modal__instructions">Deleting this object will also delete the objects below it. These changes cannot be undone. </br>Continue anyways?</p>
+					</div>
+					<div class="modal__footer">
+						<button class="modal__save-btn" type="button">Yes</button>
+						<button class="modal__cancel-btn" type="button">No</button>
+					</div>
+				</form>
+			</div>
+				
+			<div id="samples">
+				<button class="menunav__menu selected"></button>
+			
+				<li class="menu selected">
+					<span class="editable">
+						<i class="fas fa-caret-right"></i>
+						<label class="editable__label" for="menuname">Menu:</label>
+						<span class="editable__value" id="menuname"></span>
+						<span class="editable__inputs">
+							<input class="hidden-input" type="hidden" name="menuname" value ="">
+							<input class="hidden-input" type="hidden" name="menudescript" value ="">
+						</span>
+						<span class="editable__ctrl ctrl">
+							<button class="ctrl__btn ctrl__edit-btn" type="button">
+								<i class="fas fa-pencil-alt"></i>
+							</button>
+							<button class="ctrl__btn ctrl__del-btn" type="button" >
+								<i class="fas fa-trash"></i>
+							</button>
+						</span>
+					</span>
+
+					<ol class="groups list">
+						<li class="group">
+							<span class="editable">
+								<i class="fas fa-caret-right"></i>
+								<label class="editable__label" for="groupname">Group:</label>
+								<span class="editable__value" id="groupname"></span>
+								<span class="editable__inputs">
+									<input class="hidden-input" type="hidden" name="groupname" value ="">
+									<input class="hidden-input" type="hidden" name="groupdescript" value ="">
+								</span>
+								<span class="editable__ctrl ctrl">
+									<button class="ctrl__btn ctrl__edit-btn" type="button">
+										<i class="fas fa-pencil-alt"></i>
+									</button>
+									<button class="ctrl__btn ctrl__add-btn" type="button">
+										<i class="fas fa-plus"></i>
+									</button>
+									<button class="ctrl__btn ctrl__del-btn" type="button" >
+										<i class="fas fa-trash"></i>
+									</button>
+								</span>
+							</span>
+						
+							<ol class="items list">
+								<li class="item">
+									<span class="editable">
+										<i class="fas fa-caret-right"></i>
+										<label class="editable__label" for="itemname">Item:</label>
+										<span class="editable__value" id="itemname"></span>
+										<span class="editable__inputs">
+											<input class="hidden-input" type="hidden" name="itemname" value="">
+											<input class="hidden-input" type="hidden" name="itemdescript" value="">
+										</span>
+										<span class="editable__ctrl ctrl">
+											<button class="ctrl__btn ctrl__edit-btn" type="button">
+												<i class="fas fa-pencil-alt"></i>
+											</button>
+											<button class="ctrl__btn ctrl__add-btn" type="button">
+												<i class="fas fa-plus"></i>
+											</button>
+											<button class="ctrl__btn ctrl__del-btn" type="button" >
+												<i class="fas fa-trash"></i>
+											</button>
+										</span>
+									</span>
+									<ol class="prices list">
+										<li class="price">
+											<span class="editable">
+												<i class="fas fa-caret-right"></i>
+												<label class="editable__label" for="pricevalue">Price:</label>
+												<span class="editable__value" id="pricevalue"></span>
+												<span class="editable__value" id="sizevalue"></span>
+												<span class="editable__inputs">
+													<input class="hidden-input" type="hidden" name="isMP" value="">
+													<input class="hidden-input" type="hidden" name="price" value="">
+													<input class="hidden-input" type="hidden" name="size" value="">
+												</span>
+												<span class="editable__ctrl ctrl">
+													<button class="ctrl__btn ctrl__edit-btn" type="button">
+														<i class="fas fa-pencil-alt"></i>
+													</button>
+													<button class="ctrl__btn ctrl__add-btn" type="button">
+														<i class="fas fa-plus"></i>
+													</button>
+													<button class="ctrl__btn ctrl__del-btn" type="button" >
+														<i class="fas fa-trash"></i>
+													</button>
+												</span>
+											</span>
+										</li>
+									</ol>
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="scripts/newrest.js"></script>
+</html>
