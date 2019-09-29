@@ -11,7 +11,7 @@
 }
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -26,8 +26,8 @@ body {
 
 [class*="col-"] {
     width: 100%;
-	padding: 15px;
-	float: left;
+    padding: 15px;
+    float: left;
 }
 
 .row::after {
@@ -90,18 +90,60 @@ body {
     margin: 0px;
 }
 
-.about__text {
+.about__body {
     font-family: 'Open Sans Condensed', sans-serif; 
     font-weight: 300;
+}
+
+.about__text {
+    margin: 0px;
+    border-bottom: 1px solid var(--light-2);
+    padding-bottom: 10px;
     font-size: 22px;
 }
 
-.about__footer {
-    padding: 15px;
-    text-align: center;
+.about__contact {
+    padding-top: 10px;
+    font-size: 20px;
 }
 
-.about__btn {
+.contact__container {
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.contact__icon {
+    color: var(--focus-1);
+    padding: 0px 5px;
+}
+
+.contact__input {
+    font-family: 'Open Sans Condensed', sans-serif; 
+    font-size: 18px;
+    border: none;
+    text-align: center;
+    width: 150px;
+    outline: none;
+}
+
+.contact__copy {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--dark-1-less);
+    outline: none;
+    cursor: pointer;
+    padding: 0px 5px;
+}
+
+
+/*.about__footer {
+    padding: 15px;
+    text-align: center;
+}*/
+
+/*.about__btn {
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 300;
     font-size: 18px;
@@ -112,7 +154,7 @@ body {
     color: var(--light-1);
     box-shadow: 0px 5px 10px var(--shadow-1-less);
     cursor: pointer;
-}
+}*/
 
 .projects {
     padding-top: 75px;
@@ -139,7 +181,7 @@ body {
 }
 
 .project__icon {
-	width: 100%;
+    width: 100%;
     max-height: 45%;
 }
 
@@ -149,7 +191,7 @@ body {
 }
 
 .project__title {
-	font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.5em;
     color: var(--dark-2);
@@ -365,19 +407,28 @@ body {
         font-size: 44px;
     }
 
-    .about__text {}
+    .about__body {}
 
-    .about__footer {
-        text-align: left;
+    .contact__container {
+        display: inline-block;
     }
 
-    .about__btn {
-        background: var(--focus-1-less);
+    .contact__text {
+        display: inline-block;
+        width: 0px;
+        height: 27px;
+        overflow: hidden;
+        vertical-align: bottom;
+        transition: width 0.8s;
     }
 
-    .about__btn:hover {
-        transition: background 0.3s;
-        background: var(--focus-1);
+    .contact__container:hover {
+        border: 1px solid var(--focus-1);
+    }
+
+    .contact__container:hover .contact__text {
+        width: 200px;
+        transition: width 0.8s;
     }
 
     .projects {

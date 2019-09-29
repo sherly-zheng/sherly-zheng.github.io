@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style/default.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700|Open+Sans:300&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/02ab00274b.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
 	<body>
@@ -23,12 +24,35 @@
 			<div class="body__section about" id="about">
 				<div class="about__container row">
 					<h1 class="about__heading col-5">Hi, I'm Sherly. </br>I'm a full-stack engineer</br> and recent graduate.</h1>
-					<div class="about__text col-7">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan dignissim condimentum. Integer augue magna, malesuada sit amet lacus eu, tempus iaculis lacus. Integer vitae erat ipsum. Cras bibendum sapien id sem congue mattis. Quisque non felis eget mi feugiat elementum sit amet a nunc.
+					<div class="about__body col-7">
+						<p class="about__text">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan dignissim condimentum. Integer augue magna, malesuada sit amet lacus eu, tempus iaculis lacus. Integer vitae erat ipsum. Cras bibendum sapien id sem congue mattis. Quisque non felis eget mi feugiat elementum sit amet a nunc.
+						</p>
+						<div class="about__contact contact">
+							<span class="contact__label">Contact me: </span>
+							<div class="contact__container" type="button">
+								<i class="contact__icon far fa-envelope"></i>
+								<span class="contact__text">
+									<input class="contact__input" type="text" readonly="true" value="zheng.sherly@gmail.com">
+									<button class="contact__copy" onclick="copy(this)"><i class="far fa-clipboard"></i></button>
+								</span>
+							</div>
+							<div class="contact__container" type="button">
+								<i class="contact__icon fas fa-mobile-alt"></i>
+								<span class="contact__text">
+									<input class="contact__input" type="text" readonly="true" value="(347) 981-0612">
+									<button class="contact__copy" onclick="copy(this)"><i class="far fa-clipboard"></i></button>
+								</span>
+							</div>
+							<div class="contact__container" type="button">
+								<i class="contact__icon fab fa-github"></i>
+								<span class="contact__text">
+									<input class="contact__input" type="text" readonly="true" value="github.com/szheng104">
+									<button class="contact__copy" onclick="copy(this)"><i class="far fa-clipboard"></i></button>
+								</span>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="about__footer row">
-					<button class="about__btn" type="button">Connect with me!</button>
 				</div>
 			</div>
 
@@ -108,5 +132,6 @@
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="scripts/jquery.copy.js"></script>
 	<script type="text/javascript" src="scripts/jquery.scroll.js"></script>
 </html>
