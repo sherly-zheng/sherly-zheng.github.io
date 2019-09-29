@@ -362,8 +362,9 @@ body {
     }
     
     .nav {
+        position: relative;
         padding: 15px;
-        width: 85%;
+        width: 100%;
     }
 
     .nav__left {
