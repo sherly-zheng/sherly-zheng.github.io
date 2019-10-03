@@ -5,7 +5,7 @@ function copy(btn){
 }
 
 $(document).ready(function(){
-	$(".contact__container").mouseout(function(){
+	$(".contact__container").focusout(function(){
 		$(".contact__copy .fas").removeClass("fas").addClass("far");
 		document.getSelection().removeAllRanges();
 	});

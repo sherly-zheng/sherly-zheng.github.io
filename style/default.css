@@ -116,13 +116,15 @@ body {
 .contact__icon {
     color: var(--focus-1);
     padding: 0px 5px;
+    text-align: center;
+    width: 30px;
 }
 
 .contact__input {
     font-family: 'Open Sans Condensed', sans-serif; 
     font-size: 18px;
     border: none;
-    text-align: center;
+    text-align: left;
     width: 150px;
     outline: none;
 }
@@ -409,6 +411,10 @@ body {
         overflow: hidden;
         vertical-align: bottom;
         transition: width 0.8s;
+    }
+
+    .contact__input {
+        text-align: center;
     }
 
     .contact__container:hover {
