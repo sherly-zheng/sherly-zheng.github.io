@@ -306,11 +306,20 @@ body {
     box-shadow: 0px 5px 10px var(--shadow-1-less);
 }
 
+.footer {
+    background: rgba(220, 224, 230, 0.35);
+    color: var(--dark-1);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 15px 0px;
+    text-align: center;
+}
+
 
 @media only screen and (min-width: 768px) {
     body {
         margin: 0px auto;
-        width: 85%;
     }
 
     .col-1 {
@@ -362,9 +371,10 @@ body {
     }
     
     .nav {
+        margin: auto;
         position: relative;
         padding: 15px;
-        width: 100%;
+        width: 85%;
     }
 
     .nav__left {
@@ -377,6 +387,11 @@ body {
 
     .nav__link:hover {
         font-weight: 800;
+    }
+
+    .body {
+        margin: auto;
+        width: 85%;
     }
 
     .about__heading {
