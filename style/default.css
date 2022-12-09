@@ -103,9 +103,8 @@ body {
 }
 
 .contact__button {
-  display: block;
-  /* border: 1px solid transparent;
-  border-radius: 5px; */
+  display: inline-block;
+  text-decoration: none;
 }
 
 .contact__icon {
@@ -113,25 +112,6 @@ body {
   padding: 0px 5px;
   text-align: center;
   width: 30px;
-}
-
-.contact__input {
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 18px;
-  border: none;
-  text-align: left;
-  width: 150px;
-  outline: none;
-}
-
-.contact__copy {
-  background: none;
-  border: none;
-  font-size: 18px;
-  color: var(--dark-1-less);
-  outline: none;
-  cursor: pointer;
-  padding: 0px 5px;
 }
 
 .projects {
@@ -229,9 +209,6 @@ body {
 
 .resume {
   padding: 75px 0px;
-}
-
-.resume__section {
 }
 
 .resume__heading {
@@ -396,33 +373,9 @@ body {
 
   .contact__button {
     display: inline-block;
-    background: none;
-    border: 0px;
-    padding: 0px;
+    text-decoration: none;
     font-size: 20px;
   }
-
-  /* .contact__text {
-    display: inline-block;
-    width: 0px;
-    height: 27px;
-    overflow: hidden;
-    vertical-align: bottom;
-    transition: width 0.8s;
-  } */
-
-  /* .contact__input {
-    text-align: center;
-  } */
-
-  /* .contact__container:hover {
-        border: 1px solid var(--focus-1);
-    }
-
-    .contact__container:hover .contact__text {
-        width: 180px;
-        transition: width 0.8s;
-    } */
 
   .projects {
     justify-content: space-between;
